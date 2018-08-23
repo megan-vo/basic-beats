@@ -24,7 +24,7 @@ class LinearBeats extends React.Component {
     Tone = require('tone');
     // creates it once to avoid overlapping synths
     sampler = new Tone.Sampler({
-      "E4": "static/sounds/hihat3.mp3",
+      "E4": "static/sounds/hihat3.wav",
     }).toMaster();
 
     // To avoid overlapping patterns, declare here
