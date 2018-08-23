@@ -75,8 +75,7 @@ class ThreeFourDemo extends React.Component {
     this.setState({ play: false });
     this.props.updateProps({
       on: false,
-      hover: false,
-      play: false
+      hover: false
     });
   }
 
@@ -85,8 +84,7 @@ class ThreeFourDemo extends React.Component {
       this.setState({ degrees: 0 });
       this.setState({ onBeat: 0 });
       this.props.updateProps({
-        beatNum: 0,
-        hover: true
+        beatNum: 0
       });
 
       // starts the transport and lets
@@ -96,7 +94,8 @@ class ThreeFourDemo extends React.Component {
       this.setState({ opacity: "1" });
       this.setState({ play: true });
       this.props.updateProps({
-        on: true
+        on: true,
+        hover: true
       });
     } else if (this.state.play) {
       this.turnOff();
