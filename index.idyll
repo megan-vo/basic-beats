@@ -1,0 +1,168 @@
+[meta title:"Beat Basics: 3/4 and 6/8" description:"Differentiating 3/4 and 6/8" /]
+
+[var name:"step" value:0 /] // what scroller view we are in
+[var name:"demoNumOn" value:`false ` /] // numbering visual
+[var name:"beatNumThreeFour" value:0 /] // keep track of curr beat
+[var name:"beatNumSixEight" value:0 /] // keep track of curr beat
+[var name:"beatNumDefault" value:0 /] // keeps track of default beat
+[var name:"beatHoverThree" value:`false ` /] // hover state of 3/4
+[var name:"beatHoverSix" value:`false `/] // hover state of 6/8
+
+// Strong/weak visual emphasis based on time sig
+[var name:"emphasizeThreeFour" value:`false `/] 
+[var name:"emphasizeSixEight" value:`false `/] 
+
+// True when visual is playing. False if not
+[var name:"threeFourOn" value:`false `/] 
+[var name:"sixEightOn" value:`false `/] 
+[var name:"playLinear" value:`false `/] 
+
+[Scroller currentStep:step]
+[Step]
+[Header
+  title:"BEAT BASICS"
+  subtitle:"An interactive exploration differentiating 3/4 and 6/8 using John Varney's rhythm wheel"
+  author:"Megan Vo" /]
+[/Step]
+
+[Step]
+// ### INTRODUCTION
+The **two grey circles** on the right each represent a **rhythm**. 
+Go ahead and **hover** over them to play a rhythm one at a time. 
+They don't sound the same, do they? 
+
+Intuitively, we may know that they _are_ different by picking up a few visual or aural cues. 
+For example, the **number** and **positioning** of the circles are different for each rhythm,
+and the **beats** corresponding with the circles aren't at the same place. 
+
+Parsing out these differences perhaps isn't the most difficult task
+for us to do at a high level, so let's break it down a bit more.
+[/Step]
+
+[Step]
+// This one introduces accenting/emphasizing beats
+### THE BASICS
+In a [TedEd video](https://ed.ted.com/lessons/a-different-way-to-visualize-rhythm-john-varney), John Varney defines
+rhythm as "essentially an event repeating regularly over time". But as the video explains, a uniform event over time doesn't 
+really lend itself to the more complex musical rhythms that we have on the right. Consider 
+a simple cycle divided into 6 beats:
+
+[LinearBeats mode:`threeFourOn ? 0 : sixEightOn ? 1 : 2 ` 
+             beatCount:`threeFourOn ? beatNumThreeFour : sixEightOn ? beatNumSixEight : 0 ` 
+             beatNum:beatNumDefault displayThreeFour:emphasizeThreeFour displaySixEight:emphasizeSixEight /]
+
+
+In order for us to get this strand to resemble our two musical rhythms, 
+we have to assign **stresses or accents** to the beats and figure out when to place a beat. Try hovering
+over the two right rhythms again. 
+
+All we've really done is assign the **strongest emphasis** to the **first beat** and 
+a weaker emphasis to the others. 
+Delegating emphasis to beats within that six-beat cycle gives us the basic foundations of 
+what we call [Hoverable word:`"3/4"` display:emphasizeThreeFour hover:beatHoverThree/]
+time signature (top rhythm) and [Hoverable word:`"6/8"` display:emphasizeSixEight hover:beatHoverSix /] (bottom rhythm).
+[/Step]
+
+[Step state:"reset"]
+// Counting and dividing the circle
+### BREAKING IT DOWN
+One of the easiest ways to differentiate the two is by counting.
+
+For the **3/4** time signature, we can keep track of the cycle by repeating:
+[br/]
+
+[var name:"altThree" value:`false ` /]
+[BeatCount beatCount:beatNumThreeFour upTo:3 hover:beatHoverThree altShow:altThree /]
+
+[button onClick:`altThree = !altThree `][Display value:`altThree ? "Hide Alternative" : "Show Alternative" `/][/button]
+[br /]
+
+The "2" and "3" represent the weaker beats (or commonly, upbeats) whereas 
+the "and"s allow us to subdivide the rhythm to better illustrate how we
+are dividing the circle. In this case, we are splitting the cycle into **three
+groups of two.**
+[br/]
+
+[p]
+Similarly, we can also break up the **6/8** rhythm into groups. 
+When you hover
+over the bottom rhythm, our repeating phrase will be:
+[/p]
+
+[var name:"altSix" value:`false ` /]
+[BeatCount beatCount:beatNumSixEight upTo:2 hover:beatHoverSix altShow:altSix /]
+[button onClick:`altSix = !altSix `][Display value:`altSix ? "Hide Alternative" : "Show Alternative" `/][/button]
+
+
+This rhythm lets us split the circle into **two groups of three** which elongates the phrasing a bit.
+This simple variance in partitioning the circle gave us an entirely different
+rhythm and feel. Neat, right?
+
+Note that for **6/8**, it is also common to count numerically from 1 to 6 (see alternative counting). 
+For this type of counting, an emphasis on the first and fourth beat signifies a **6/8** 
+time signature, whereas a strong emphasis on the first and weaker emphasis on the third and fifth beats signal **3/4**.
+
+[/Step]
+
+[Step]
+### LET'S LISTEN!
+The best way to get a feel for the two is to see -- or rather, hear --
+them in action. 
+
+Both time signatures are common in songs you've probably heard.
+For this introduction however, we'll be listening to Tchaikovsky's *Waltz of the Flowers* for **3/4**
+and Mozart's *Piano Concerto No. 23 Mvmt. 2* for **6/8**. Note that changes in [a href:"https://en.wikipedia.org/wiki/Tempo"]tempo[/a]
+will speed up or slow down our rhythms.
+
+The numbers are still up
+on our circles to help with counting. Go ahead and hover over the audio clips!
+See if you can hear differences in the phrasing of notes in the two cycles.
+
+[var name:"exampleSix" value:`false `/]
+[var name:"exampleThree" value:`false `/]
+[br/]
+
+[div id:"audioSource"]
+  [div id:"audioSourceThree"]
+    [AudioPlayer sync:exampleThree file:"waltz.mp3" /]
+  [/div]
+  [div id:"audioSourceSix"]
+    [AudioPlayerSix sync:exampleSix file:"mozart.mp3"  /]
+  [/div]
+[/div]
+
+
+[/Step]
+
+[Step]
+### WHY STOP HERE?
+
+This was only an introductory, surface level exploration of the two rhythms, but there is a lot more to dive into, such as
+what the numbers in time signatures mean. 
+
+Hopefully, 
+it helped improve intuition on how to differentiate and recognize the two at a basic level. However, there are 
+many more nuances to the rhythms and many different kinds of rhythms to explore as well.
+
+Don't know where to start? I recommend taking a peek [a href:"https://www.khanacademy.org/humanities/music/music-basics2/notes-rhythm/v/lesson-2-rhythm-dotted-notes-ties-and-rests"]here[/a] 
+for Khan Academy's introductory series to rhythm in general. 
+[/Step]
+
+[Step]
+### References and Appreciation
+* This post was created using [a href:"https://tonejs.github.io/"]Tone.js[/a] and [a href:"https://idyll-lang.org/"]Idyll[/a], an open-source markup language created by Matthew Conlen
+* Thanks to Noelle Vo for recording Mozart's *Piano Concerto* at a moment's notice
+* Super special thanks to Matt Conlen for guidance, mentorship, and feedback
+
+1. Varney, John. “A Different Way to Visualize Rhythm - John Varney.” Lessons Worth Sharing | TED-Ed, TED-Ed, 20 Oct. 2014, ed.ted.com/lessons/a-different-way-to-visualize-rhythm-john-varney.
+2. Joutsenvirta, Aarre, and Jari Perkiömäki. “Time Signatures.” Music Theory  Consonance and Dissonance, www2.siba.fi/muste1/index.php?id=98&la=en.
+3. “Simple and Compound Meter.” Musictheory.net, www.musictheory.net/lessons/15.
+[/Step]
+
+[/Scroller]
+
+  // Steps keeps track of what state the scroller is in
+  [Fixed]
+    [ThreeFourDemo steps:step beatNum:beatNumThreeFour on:threeFourOn play:beatHoverThree hover:emphasizeThreeFour sync:exampleThree /]
+    [SixEightDemo steps:step beatNum:beatNumSixEight on:sixEightOn play:beatHoverSix hover:emphasizeSixEight sync:exampleSix  /]
+  [/Fixed]

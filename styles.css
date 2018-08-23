@@ -1,0 +1,157 @@
+
+.d3-component svg {
+  background: #ddd;
+  max-height: 300px;
+}
+
+@media all and (max-width: 1000px) {
+  .d3-component svg {
+    max-height: 200px;
+  }
+}
+
+.idyll-scroll {
+  margin-top: 0;
+}
+
+.idyll-scroll-text {
+    padding: 0 0;
+}
+
+.idyll-scroll-text .idyll-step {
+    margin: 0;
+    padding: 60px;
+    background: white;
+    font-family: "Noto Sans", sans-serif
+}
+
+.article-header {
+    width: 470px;
+    max-width: 90vw;
+    margin-bottom: 0;
+}
+
+.hoverable {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: 20px;
+  box-sizing: content-box;
+  background-color: none;
+  margin: auto auto 3% 50%;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s linear;
+}
+
+.counts {
+  height: 38px;
+}
+
+.beatCounts {
+  background-color: #F9F9F9;
+  padding: 0.8em;
+}
+
+button {
+  margin: auto auto 6% 40%;
+  color:#fff; 
+  cursor:pointer;
+  outline:none;
+  background: #EDAE49;
+  border:none;
+  height:25px;
+}
+
+button:focus {
+  outline:0;
+}
+
+#audioThree {
+  /* float: left; */
+  height: 5em;
+  box-sizing: content-box;
+  background-color: none;
+}
+
+#audioSixPtr {
+  margin: 4% auto auto 60%;
+ }
+
+ #audioSix {
+  /* float: left; */
+  height: 5em;
+  box-sizing: content-box;
+  background-color: none;
+  /* margin: auto auto auto 25% */
+}
+
+ 
+/* Idyll divs */
+#audioSourceThree, #audioSourceSix {
+   display: inline-block
+}
+
+#audioSourceSix {
+  margin: auto auto auto 40%;
+}
+
+#audioSourceThree {
+  margin: auto auto auto 5%;
+}
+
+#label3 {
+  position: absolute;
+  margin: 1% 0 0 10%;
+  color: #FF851B;
+}
+
+@media (max-width: 1000px) {
+  .fixed {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #EDAE49;
+  font-family: 'Anton', sans-serif;
+}
+
+h1.hed {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: 600;
+}
+
+.byline {
+  text-align: center;
+}
+
+h3 {
+  color: #087E8B;
+  text-transform: uppercase;
+
+}
+
+.hoverableAudio {
+  cursor: pointer;
+  max-height: 100%;
+  max-width: 50%;
+}
+
+h4 {
+  color: #EDAE49;
+  text-align: right;
+  font-size: 1.2em;
+}
