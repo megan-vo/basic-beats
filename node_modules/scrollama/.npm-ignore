@@ -1,6 +1,0 @@
-dev/
-docs/
-build/scrollama.js
-rollup.config.*
-.gitignore
-.travis.yml
