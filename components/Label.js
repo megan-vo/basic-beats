@@ -1,4 +1,5 @@
 const React = require('react');
+const Latex = require('react-latex');
 
 class Label extends React.Component {
   constructor(props) {

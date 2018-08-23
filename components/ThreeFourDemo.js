@@ -1,4 +1,5 @@
 const React = require('react');
+import { VictoryAnimation } from 'victory';
 import CircleGraphic from './CircleGraphic.js';
 
 var Tone;
@@ -22,9 +23,9 @@ class ThreeFourDemo extends React.Component {
     Tone = require('tone');
     // creates it once to avoid overlapping synths
     sampler = new Tone.Sampler({
-      "C4": "static/sounds/bassdrum4.wav",
-      "E4": "static/sounds/silence.wav",
-      "D4": "static/sounds/hihat3.wav"
+      "C4": "static/sounds/bassdrum4.mp3",
+      "E4": "static/sounds/silence.mp3",
+      "D4": "static/sounds/hihat3.mp3"
     }).toMaster();
 
     // To avoid overlapping patterns, declare here
@@ -75,6 +76,7 @@ class ThreeFourDemo extends React.Component {
     this.props.updateProps({
       on: false,
       hover: false,
+      play: false
     });
   }
 
@@ -84,6 +86,7 @@ class ThreeFourDemo extends React.Component {
       this.setState({ onBeat: 0 });
       this.props.updateProps({
         beatNum: 0,
+        hover: true
       });
 
       // starts the transport and lets
@@ -93,8 +96,7 @@ class ThreeFourDemo extends React.Component {
       this.setState({ opacity: "1" });
       this.setState({ play: true });
       this.props.updateProps({
-        on: true,
-        hover: true
+        on: true
       });
     } else if (this.state.play) {
       this.turnOff();

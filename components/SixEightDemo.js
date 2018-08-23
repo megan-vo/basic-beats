@@ -22,9 +22,9 @@ class SixEightDemo extends React.Component {
     Tone = require('tone');
     // creates it once to avoid overlapping synths
     sampler = new Tone.Sampler({
-      "C4": "static/sounds/bassdrum4.wav",
-      "E4": "static/sounds/hihat3.wav",
-      "D4": "static/sounds/snare.wav"
+      "C4": "static/sounds/bassdrum4.mp3",
+      "E4": "static/sounds/hihat3.mp3",
+      "D4": "static/sounds/snare.mp3"
     }).toMaster();
 
     // To avoid overlapping patterns, declare here
