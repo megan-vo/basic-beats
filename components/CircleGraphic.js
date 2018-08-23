@@ -1,22 +1,8 @@
 const React = require('react');
-import { VictoryAnimation } from 'victory';
 
 const centerX = 200;
 const centerY = 150;
 const radius = 100;
-
-// const styles = {
-//   HIDE: {
-//        webkitTransition: "0.5s",
-//        mozTransition: "0.5s",
-//        oTransition: "0.5s",
-//        transition: "0.5s",
-//        visibility: "hidden"
-//   },
-//   SHOW: {
-//     visibility: "visible"
-//   }
-// }
 
 class CircleGraphic extends React.Component {
   constructor(props) {
