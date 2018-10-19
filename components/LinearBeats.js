@@ -136,7 +136,7 @@ class LinearBeats extends React.Component {
           </g>
           {display ? this.showText() : () => { }}
         </svg>
-        <img id="ptr" src={"static/images/cursor2.png"} opacity={.2} />
+        <img className="ptrs" id="ptr" src={"static/images/cursor2.png"} opacity={.2} />
       </div>
     )
   }

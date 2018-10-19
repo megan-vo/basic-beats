@@ -84,7 +84,7 @@ class BeatCount extends React.Component {
           <p className="counts" align="center">{this.props.upTo !== 0 ? this.beatCounts() : () => { }}</p>
           <p className="alts" align="center"><span id={"alt" + this.props.upTo}>{altShow ? this.renderAlt() : () => { }}</span></p>
         </div>
-        <img id={"ptr" + this.props.upTo} src={"static/images/cursor2.png"} opacity={.2} />
+        <img className="ptrs" id={"ptr" + this.props.upTo} src={"static/images/cursor2.png"} opacity={.2} />
       </div>
     ]
   }

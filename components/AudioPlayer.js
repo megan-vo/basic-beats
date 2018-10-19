@@ -52,7 +52,7 @@ class AudioPlayer extends React.Component {
       <div className="hoverableAudio" onMouseEnter={this.playAudio.bind(this)} onMouseLeave={this.turnOff.bind(this)} >
         <h4>3/4</h4>
         <img id="audioThree" src={"static/images/audio.svg"} opacity={.2} />
-        <img id="audioThreePtr" src={"static/images/cursor2.png"} opacity={.2} />
+        <img className="ptrs" id="audioThreePtr" src={"static/images/cursor2.png"} opacity={.2} />
       </div>
     )
   }
