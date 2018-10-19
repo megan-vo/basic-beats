@@ -1090,3 +1090,31 @@ h4 {
   text-align: right;
   font-size: 1.2em;
 }
+
+@media only screen and (min-width: 2000px) {
+  .idyll-text-container {
+    max-width: 40vw !important;
+    font-size: 22px;
+  }
+
+  .fixed .hoverable {
+    transform: scale(1.5);
+    margin-bottom: 15vh;
+  }
+
+  .article-header {
+    width: 100%
+  }
+
+  button {
+    margin: auto auto 6% 45%;
+  }
+
+  .ptrs {
+    transform: scale(1.5)
+  }
+
+  .fixed div {
+    width: 0%;
+  }
+}
