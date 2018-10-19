@@ -160,11 +160,14 @@ h4 {
   .idyll-text-container {
     max-width: 40vw !important;
     font-size: 22px;
+    margin-left: 5%;
   }
 
   .fixed .hoverable {
-    transform: scale(1.5);
-    margin-bottom: 15vh;
+    transform: scale(1.7);
+    margin-bottom: 10vh;
+    margin-top: 15vh;
+    margin-right: 15vw;
   }
 
   .article-header {
