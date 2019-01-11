@@ -1,24 +1,35 @@
+/* Autoplay handling style */
+#unmuteContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
 
+#unmute {
+  margin: 0 auto;
+  margin-top: 5%;
+  transform: scale(1.5);
+}
 
 .idyll-scroll {
   margin-top: 0;
 }
 
 .idyll-scroll-text {
-    padding: 0 0;
+  padding: 0 0;
 }
 
 .idyll-scroll-text .idyll-step {
-    margin: 0;
-    padding: 60px;
-    background: white;
-    font-family: "Noto Sans", sans-serif
+  margin: 0;
+  padding: 60px;
+  background: white;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .article-header {
-    width: 470px;
-    max-width: 90vw;
-    margin-bottom: 0;
+  width: 470px;
+  max-width: 90vw;
+  margin-bottom: 0;
 }
 
 .hoverable {
@@ -44,22 +55,22 @@ img {
 }
 
 .beatCounts {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   padding: 0.8em;
 }
 
 button {
   margin: auto auto 6% 40%;
-  color:#fff; 
-  cursor:pointer;
-  outline:none;
-  background: #EDAE49;
-  border:none;
-  height:25px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  background: #edae49;
+  border: none;
+  height: 25px;
 }
 
 button:focus {
-  outline:0;
+  outline: 0;
 }
 
 #audioThree {
@@ -71,9 +82,9 @@ button:focus {
 
 #audioSixPtr {
   margin: 4% auto auto 60%;
- }
+}
 
- #audioSix {
+#audioSix {
   /* float: left; */
   height: 5em;
   box-sizing: content-box;
@@ -81,10 +92,10 @@ button:focus {
   /* margin: auto auto auto 25% */
 }
 
- 
 /* Idyll divs */
-#audioSourceThree, #audioSourceSix {
-   display: inline-block
+#audioSourceThree,
+#audioSourceSix {
+  display: inline-block;
 }
 
 #audioSourceThree {
@@ -94,13 +105,13 @@ button:focus {
 #label3 {
   position: absolute;
   margin: 1% 0 0 10%;
-  color: #FF851B;
+  color: #ff851b;
 }
 
 h1 {
   text-align: center;
-  color: #EDAE49;
-  font-family: 'Anton', sans-serif;
+  color: #edae49;
+  font-family: "Anton", sans-serif;
 }
 
 h1.hed {
@@ -118,9 +129,8 @@ h2 {
 }
 
 h3 {
-  color: #087E8B;
+  color: #087e8b;
   text-transform: uppercase;
-
 }
 
 .hoverableAudio {
@@ -130,7 +140,7 @@ h3 {
 }
 
 h4 {
-  color: #EDAE49;
+  color: #edae49;
   text-align: right;
   font-size: 1.2em;
 }
@@ -147,7 +157,7 @@ h4 {
   }
 
   #audioSourceThree {
-    margin-left: 10%
+    margin-left: 10%;
   }
 }
 
@@ -185,7 +195,7 @@ h4 {
   }
 
   .article-header {
-    width: 100%
+    width: 100%;
   }
 
   button {
@@ -193,7 +203,7 @@ h4 {
   }
 
   .ptrs {
-    transform: scale(1.5)
+    transform: scale(1.5);
   }
 
   .fixed div {

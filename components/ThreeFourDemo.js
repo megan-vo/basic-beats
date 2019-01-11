@@ -1,5 +1,4 @@
 const React = require("react");
-const StartAudioContext = require("startaudiocontext");
 import CircleGraphic from "./CircleGraphic.js";
 
 var Tone;
@@ -21,7 +20,6 @@ class ThreeFourDemo extends React.Component {
 
   componentDidMount() {
     Tone = require("tone");
-    var context = new AudioContext();
     // creates it once to avoid overlapping synths
     sampler = new Tone.Sampler({
       C4: "static/sounds/bassdrum4.wav",
@@ -43,7 +41,6 @@ class ThreeFourDemo extends React.Component {
     // Make sure it is mounted before loading up
     // sampler
     this.setState({ mounted: true });
-    StartAudioContext(Tone.context, "test-three-four");
   }
 
   // Animates the circle in sync with the current
@@ -135,7 +132,6 @@ class ThreeFourDemo extends React.Component {
     var beat = this.state.onBeat;
     return [
       <div
-        id="test-three-four"
         className="hoverable"
         onMouseEnter={this.playAudio.bind(this)}
         onMouseLeave={this.turnOff.bind(this)}
