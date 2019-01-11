@@ -12,11 +12,17 @@ class Unmute extends React.Component {
     this.state = {
       on: false
     };
+
+    this.buttonClick = this.buttonClick.bind(this);
   }
 
   componentDidMount() {
     Tone = require("tone");
     StartAudioContext(Tone.context, "#unmute");
+
+    document.querySelector("body").addEventListener("click", e => {
+      this.buttonClick();
+    });
   }
 
   buttonClick() {
